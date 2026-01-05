@@ -20,23 +20,27 @@
 <header>
   <div class="header-inner">
     <div class="logo glow">NAMGLCHAMP</div>
-    <nav class="main-nav">
+    <nav>
       <a href="index.html">Нүүр</a>
-      
+
+      <a href="streamer.html">Тэмцээнийг үзэх</a>
+
+       <!-- Season Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn">Season ▼</button>
+        <button class="dropbtn">Season</button>
         <div class="dropdown-content">
           <a href="season1.html">Season 1</a>
           <a href="season2.html">Season 2</a>
         </div>
       </div>
 
-      <a href="streamer.html">Тэмцээнийг үзэх</a>
+      <a href="rules.html">Дүрэм</a>
       <a href="register.html">Бүртгэл</a>
       <a href="bracket.html">Bracket</a>
     </nav>
   </div>
 </header>
+
 
 
 <!-- HERO -->
@@ -129,6 +133,22 @@
   // Update every second
   const timerInterval = setInterval(updateCountdown, 1000);
 </script>
+<script>
+  // Toggle dropdown on button tap (mobile)
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // prevent closing immediately
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
 
+  // Close dropdown when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
 </body>
 </html>
