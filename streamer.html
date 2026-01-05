@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тэмцээнийг үзэх – NAMGLCHAMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo glow">NAMGLCHAMP</div>
+     <nav>
+  <a href="index.html">Нүүр</a>
+  <a href="streamer.html">Тэмцээнийг үзэх</a> 
+  <a href="rules.html">Дүрэм</a>
+  <a href="register.html">Бүртгэл</a>
+  <a href="bracket.html">Bracket</a>
+</nav>
+  </div>
+</header>
+
+<!-- HERO STREAM -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Үзэгчидтэй шууд дамжуулалт</h1>
+    <p>Хойд Америкийн Монгол Dota 2 тэмцээнээ <strong>Streamers</strong> -ын тусламжтайгаар шууд үзээрэй!</p>
+<section class="streamer-info">
+  <div class="streamer-container">
+    <img src="images/cadis-profile.jpg" alt="Cadis" class="streamer-avatar">
+    <div class="streamer-text">
+      <h2>Caster: Cadis</h2>
+      
+    </div>
+  </div>
+</section>
+
+    <!-- LAZY-LOAD STREAM -->
+    <div class="stream-container">
+  <div id="stream-placeholder" class="stream-placeholder">
+    <div id="stream-placeholder" class="stream-placeholder">
+  <img src="images/cadis-bg.JPG" alt="Click to Watch Live">
+  <div class="play-button">&#9658;</div>
+</div>
+
+    <div class="play-button">&#9658;</div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 NAMGLCHAMP · All rights reserved
+</footer>
+
+<script>
+  const placeholder = document.getElementById('stream-placeholder');
+  placeholder.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = "https://www.youtube.com/embed/live_stream?channel=UCAbCdEfGhIjKlMnOpQrStUv";
+    iframe.width = "100%";
+    iframe.height = "500";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.frameBorder = "0";
+    placeholder.replaceWith(iframe);
+  });
+</script>
+
+</body>
+</html>
