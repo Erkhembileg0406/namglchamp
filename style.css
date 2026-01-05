@@ -78,47 +78,27 @@ nav a {
 }
 
 
-/* Dropdown container */
+/* ================= DROPDOWN ================= */
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
-/* Dropdown button */
-.dropbtn {
-  background: rgba(0,0,0,0.85); /* matches header */
-  border: 1px solid rgba(255,60,0,0.6);
-  border-radius: 6px;
-  padding: 8px 12px;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  line-height: 1.5;
-}
-
-.dropbtn:hover {
-  background: #ff3c00;
-  box-shadow: 0 0 10px rgba(255,60,0,0.7);
-}
-
-/* Dropdown content */
 .dropdown-content {
   display: none;
-  position: absolute; /* desktop dropdown */
+  position: absolute;
+  top: 100%; /* below button */
+  left: 0;
   background-color: #111;
   min-width: 150px;
+  border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.8);
   z-index: 1000;
-  border-radius: 6px;
 }
 
-/* Links inside dropdown */
 .dropdown-content a {
-  color: #fff;
-  padding: 10px 12px;
   display: block;
+  padding: 10px 12px;
+  color: #fff;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -128,39 +108,35 @@ nav a {
   color: #ff4500;
 }
 
-/* Show dropdown when button is hovered (desktop) */
-@media(min-width: 769px) {
+/* Show dropdown on hover (desktop) */
+@media (hover: hover) {
   .dropdown:hover .dropdown-content {
     display: block;
   }
 }
 
-/* Show dropdown when .show class is added (mobile) */
-.dropdown-content.show {
-  display: block;
-}
-
-/* Mobile stacked dropdown */
-@media(max-width:768px){
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
   nav {
-    flex-direction: column;
-    gap: 8px;
+    flex-wrap: wrap; /* allow wrapping if screen is too small */
+    justify-content: center;
   }
 
+  /* Dropdown content stacked but only shows on tap */
   .dropdown-content {
-    position: relative; /* stack under button */
-    box-shadow: none;
-    min-width: 100%;
-    margin-top: 4px;
-    border-radius: 6px;
+    position: absolute; /* still appears below button */
+    top: 100%;
+    left: 0;
+    display: none;
+    width: max-content;
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.8);
   }
 
-  .dropbtn {
-    width: 100%;
-    text-align: left;
+  .dropdown-content.show {
+    display: block;
   }
 }
-
 
 
 
