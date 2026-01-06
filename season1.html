@@ -63,39 +63,247 @@
   </nav>
 </header>
 
+<style>
+  /* ================= SEASON TEAMS ================= */
+.season-teams {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.season-teams h1 {
+  color: #ff3c00;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  gap: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
+/* Flip Card */
+.flip-card {
+  perspective: 1000px;
+}
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Хойд Америкийн Монгол Dota 2 Тэмцээн</h1>
-    <p>
-      NAMGLCHAMP нь Хойд Америкт байрлах Монгол Dota 2 тоглогчдод зориулсан
-      өндөр түвшний, өрсөлдөөнт тэмцээн юм.
-    </p>
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
 
-    <!-- COUNTDOWN (date will be added later) -->
-    <div class="countdown" id="countdown">
-      <div class="time-box">
-        <span>--</span>
-        <small>Өдөр</small>
-      </div>
-      <div class="time-box">
-        <span>--</span>
-        <small>Цаг</small>
-      </div>
-      <div class="time-box">
-        <span>--</span>
-        <small>Минут</small>
-      </div>
-      <div class="time-box">
-        <span>--</span>
-        <small>Секунд</small>
+/* Desktop hover */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Mobile click */
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid rgba(255,60,0,0.6);
+  background: #111;
+  box-shadow: 0 0 20px rgba(255,60,0,0.4);
+}
+
+/* Front */
+.flip-card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back */
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.flip-card-back h3 {
+  color: #ff3c00;
+  margin-bottom: 15px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flip-card-back li {
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+</style>
+
+<section class="season-teams">
+  <h1>Season 1 – Teams</h1>
+
+  <div class="team-grid">
+
+    <!-- TEAM CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team1.png" alt="Team 1">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Alpha</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <!-- COPY THIS CARD 5 MORE TIMES -->
+    <!-- TEAM CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Bravo</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TEAM CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Bravo</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- TEAM CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Bravo</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <!-- TEAM CARD 5 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Bravo</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- TEAM CARD 6 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Team Bravo</h3>
+          <ul>
+            <li>Player 1</li>
+            <li>Player 2</li>
+            <li>Player 3</li>
+            <li>Player 4</li>
+            <li>Player 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </section>
+
+
+
+
+
 
 <!-- INFO -->
 <section>
@@ -113,48 +321,6 @@
   © 2026 NAMGLCHAMP · All rights reserved
 </footer>
 
-<!-- Countdown Script (date will be set later) -->
-<script>
-  // TODO: Set tournament start date here later
-  // const targetDate = new Date("2026-03-07T10:00:00").getTime();
-  // Countdown is intentionally inactive until date is set
-</script>
-<script>
-  // Set target date in Chicago time (CST / UTC-6)
-  const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
-
-  const countdownEl = document.getElementById("countdown");
-  const boxes = countdownEl.querySelectorAll(".time-box span");
-
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      // Time reached — replace countdown with Mongolian text
-      countdownEl.innerHTML = '<h2>Тоглолт эхлэх цаг боллоо!</h2>';
-      clearInterval(timerInterval);
-      return;
-    }
-
-    // Calculate days, hours, minutes, seconds
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
-    // Update HTML
-    boxes[0].textContent = d;
-    boxes[1].textContent = h;
-    boxes[2].textContent = m;
-    boxes[3].textContent = s;
-  };
-
-  // Initial update
-  updateCountdown();
-
-  // Update every second
-  const timerInterval = setInterval(updateCountdown, 1000);
 </script>
 
 
