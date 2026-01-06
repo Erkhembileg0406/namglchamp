@@ -28,6 +28,7 @@ header {
   flex-wrap: wrap;
 }
 
+
 .logo {
   color: #ff3c00;
   font-size: 2rem;
@@ -171,6 +172,7 @@ nav.desktop-nav .dropbtn:hover {
   width: 300px; /* same size for all buttons */
   text-align: center;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 #mobile-nav a:hover,
