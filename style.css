@@ -5,12 +5,104 @@
   box-sizing: border-box;
 }
 
+/* ================= BODY / HERO ================= */
 body {
   font-family: 'Orbitron', sans-serif;
-  background: #0a0a0a;
   color: #eaeaea;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   overflow-x: hidden;
+
+  /* Hero background with Dota theme */
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 70%, #0a0a0a 100%),
+    url("images/hero-bg.png") no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  /* Optional subtle Dota flames/particles effect */
+  position: relative;
 }
+
+/* Optional: pseudo element for extra fade/glow effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(255,60,0,0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  color: #ff3c00;
+  text-shadow: 
+    0 0 10px #ff3c00aa,
+    0 0 20px #ff3c00aa,
+    0 0 30px #ffbd00aa;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+  z-index: 1;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ff3c00;
+  text-shadow:
+    0 0 5px #ff3c00,
+    0 0 10px #ff4500,
+    0 0 15px #ffbd00;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #ffbd00;
+  text-shadow: 0 0 8px #ffbd00aa;
+  margin-top: 12px;
+}
+
+/* ================= SCROLL EFFECTS ================= */
+section {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* Add subtle glow / fire accent to all headings */
+h2, h3 {
+  color: #ff3c00;
+  text-shadow:
+    0 0 6px #ff3c00,
+    0 0 12px #ffbd00;
+}
+
 
 /* ================= HEADER ================= */
 header {
@@ -220,54 +312,6 @@ nav.desktop-nav .dropbtn {
 }
 
 /* ================= HERO ================= */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* full screen height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-image: url("images/hero-bg.png");
-  background-position: center center;
-  background-size: cover; /* cover full area */
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* works on mobile */
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* dark overlay for readability */
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  color: #ff3c00;
-  text-shadow: 0 0 15px rgba(255,60,0,0.6);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* MOBILE FRIENDLY */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
-}
-
 
 /* ================= MOBILE HERO / BUTTONS ================= */
 @media(max-width:480px) {
