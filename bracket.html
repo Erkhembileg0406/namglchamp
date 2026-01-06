@@ -63,77 +63,216 @@
   </nav>
 </header>
 
+<style>
+/* ================= BRACKET SECTION ================= */
 
+#bracket {
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#bracket h2 {
+  color: #ff3c00;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  text-shadow: 0 0 12px rgba(255,60,0,0.6);
+}
+
+/* ===== GRID LAYOUT ===== */
+.bracket-grid {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 40px;
+}
+
+/* ===== COLUMNS ===== */
+.bracket-column {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.bracket-column h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  /* Gradient text */
+  background: linear-gradient(45deg, #ff3c00, #ffbd00, #ff3c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Glow effect */
+  text-shadow:
+    0 0 6px rgba(255,60,0,0.8),
+    0 0 12px rgba(255,189,0,0.7),
+    0 0 20px rgba(255,60,0,0.6);
+
+  /* Optional: metallic / rough look */
+  letter-spacing: 2px;
+}
+
+/* ===== MATCH PAIR (2 matches feeding 1) ===== */
+.match-pair {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* vertical connector between two matches */
+.match-pair::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 2px;
+  height: calc(100% - 40px);
+  background: #ff3c00;
+  transform: translateY(-50%);
+}
+
+/* horizontal connector to next column */
+.match-pair::before {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: #ff3c00;
+}
+
+/* ===== MATCH BOX ===== */
+.match {
+  position: relative;
+  background: rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,60,0,0.6);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* ===== TEAM ROW ===== */
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.team img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* winner highlight */
+.team.winner {
+  background: #ff3c00;
+  color: #000;
+  font-weight: bold;
+}
+
+/* ===== FINALS SPECIAL STYLE ===== */
+.finals .match {
+  border-color: gold;
+  box-shadow: 0 0 25px rgba(255,215,0,0.45);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .bracket-grid {
+    justify-content: flex-start;
+  }
+
+  .bracket-column {
+    min-width: 200px;
+  }
+
+  .team img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+</style>
 
 
 <!-- HERO -->
 <section class="hero">
-<section id="bracket">
-  <h2>Тэмцээний Bracket</h2>
-  <div class="bracket">
 
-    <!-- Upper Bracket -->
-    <div class="bracket-column ub-quarter ub-col">
+<div class="bracket-grid">
+
+  <!-- ROUND 1 -->
+  <div class="bracket-column round1">
+    <h3>Round 1</h3>
+
+    <div class="match-pair">
       <div class="match">
-        <div class="team"><img src="images/team1.png"><span>Team 1</span></div>
-        <div class="team"><img src="images/team8.png"><span>Team 8</span></div>
+        <div class="team winner"><img src="images/tba.jpg">Team 1</div>
+        <div class="team"><img src="images/tba.jpg">Team 2</div>
       </div>
+
       <div class="match">
-        <div class="team"><img src="images/team4.png"><span>Team 4</span></div>
-        <div class="team"><img src="images/team5.png"><span>Team 5</span></div>
+        <div class="team"><img src="images/tba.jpg">Team 3</div>
+        <div class="team winner"><img src="images/tba.jpg">Team 4</div>
       </div>
     </div>
 
-    <div class="bracket-column ub-semi ub-col">
+    <div class="match-pair">
       <div class="match">
-        <div class="team"><span>Winner QF1</span></div>
-        <div class="team"><span>Winner QF2</span></div>
+        <div class="team winner"><img src="images/tba.jpg">Team 5</div>
+        <div class="team"><img src="images/tba.jpg">Team 6</div>
       </div>
-    </div>
 
-    <div class="bracket-column ub-final ub-col">
-      <div class="match">
-        <div class="team"><span>Winner SF</span></div>
-        <div class="team"><span>—</span></div>
-      </div>
     </div>
-
-    <!-- Lower Bracket -->
-    <div class="bracket-column lb-round1 lb-col">
-      <div class="match">
-        <div class="team"><span>Loser QF1</span></div>
-        <div class="team"><span>Loser QF2</span></div>
-      </div>
-      <div class="match">
-        <div class="team"><span>Loser QF3</span></div>
-        <div class="team"><span>Loser QF4</span></div>
-      </div>
-    </div>
-
-    <div class="bracket-column lb-semi lb-col">
-      <div class="match">
-        <div class="team"><span>Winner LB R1</span></div>
-        <div class="team"><span>Winner Another</span></div>
-      </div>
-    </div>
-
-    <div class="bracket-column lb-final lb-col">
-      <div class="match">
-        <div class="team"><span>Winner LB Semi</span></div>
-        <div class="team"><span>—</span></div>
-      </div>
-    </div>
-
-    <!-- Grand Final -->
-    <div class="bracket-column grand-final ub-col">
-      <div class="match">
-        <div class="team"><span>UB Champion</span></div>
-        <div class="team"><span>LB Champion</span></div>
-      </div>
-    </div>
-
   </div>
-</section>
+
+  <!-- SEMI FINALS -->
+  <div class="bracket-column semis">
+    <h3>Semi Finals</h3>
+
+    <div class="match-pair">
+      <div class="match">
+        <div class="team winner"><img src="images/tba.jpg">Team 1</div>
+        <div class="team"><img src="images/tba.jpg">Team 4</div>
+      </div>
+
+      <div class="match">
+        <div class="team"><img src="images/tba.jpg">Team 5</div>
+        <div class="team winner"><img src="images/tba.jpg">Team 8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINALS -->
+  <div class="bracket-column finals">
+    <h3>Final</h3>
+
+    <div class="match">
+      <div class="team winner"><img src="images/tba.jpg">Team 1</div>
+      <div class="team"><img src="images/tba.jpg">Team 8</div>
+    </div>
+  </div>
+
+</div>
+
 
 
 </section>
@@ -154,58 +293,8 @@
   © 2026 NAMGLCHAMP · All rights reserved
 </footer>
 
-<script>
-</script>
-<script>
-  const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
-
-  const countdownEl = document.getElementById("countdown");
-  const boxes = countdownEl.querySelectorAll(".time-box span");
-
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      countdownEl.innerHTML = '<h2>Тоглолт эхлэх цаг боллоо!</h2>';
-      clearInterval(timerInterval);
-      return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
-    boxes[0].textContent = d;
-    boxes[1].textContent = h;
-    boxes[2].textContent = m;
-    boxes[3].textContent = s;
-  };
-
-  updateCountdown();
-
-  const timerInterval = setInterval(updateCountdown, 1000);
-</script>
 
 
-<script>
-  // Toggle dropdown on button tap (mobile)
-  document.querySelectorAll('.dropbtn').forEach(button => {
-    button.addEventListener('click', e => {
-      e.stopPropagation(); // prevent closing immediately
-      const content = button.nextElementSibling;
-      content.classList.toggle('show');
-    });
-  });
-
-  // Close dropdown when clicking outside
-  window.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-content').forEach(menu => {
-      menu.classList.remove('show');
-    });
-  });
-</script>
 
 
 <script>
@@ -288,91 +377,7 @@
 </script>
 
 <style>
-    #bracket {
-  text-align: center;
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  margin: 60px auto;
-  max-width: 1400px;
-  overflow-x: auto;
-}
-
-#bracket h2 {
-  color: #ff3c00;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* Main bracket container */
-.bracket {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-/* Column */
-.bracket-column {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.ub-col, .lb-col {
-  min-width: 180px;
-}
-
-/* Match box */
-.match {
-  background: rgba(0,0,0,0.65);
-  border: 2px solid #ff3c00;
-  border-radius: 8px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: left;
-}
-
-.team {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.team img {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border: 1px solid #ff3c00;
-  border-radius: 4px;
-}
-
-/* Highlight potential winners */
-.ub-final .team:first-child,
-.grand-final .team:first-child {
-  background: #ff3c00;
-  color: #000;
-}
-
-/* Optional connecting lines effect */
-.bracket-column:not(:last-child) .match {
-  position: relative;
-}
-
-.bracket-column:not(:last-child) .match::after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 50%;
-  width: 20px;
-  height: 2px;
-  background: #ff3c00;
-}
+  
 
 </style>
 
