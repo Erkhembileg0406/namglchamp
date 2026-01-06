@@ -6,6 +6,16 @@
 }
 
 /* ================= BODY / HERO ================= */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #eaeaea;
+  overflow-x: hidden;
+}
 body {
   font-family: 'Orbitron', sans-serif;
   color: #eaeaea;
