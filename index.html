@@ -113,14 +113,9 @@
   © 2026 NAMGLCHAMP · All rights reserved
 </footer>
 
-<!-- Countdown Script (date will be set later) -->
 <script>
-  // TODO: Set tournament start date here later
-  // const targetDate = new Date("2026-03-07T10:00:00").getTime();
-  // Countdown is intentionally inactive until date is set
 </script>
 <script>
-  // Set target date in Chicago time (CST / UTC-6)
   const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
 
   const countdownEl = document.getElementById("countdown");
@@ -131,42 +126,37 @@
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      // Time reached — replace countdown with Mongolian text
       countdownEl.innerHTML = '<h2>Тоглолт эхлэх цаг боллоо!</h2>';
       clearInterval(timerInterval);
       return;
     }
 
-    // Calculate days, hours, minutes, seconds
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const m = Math.floor((diff / (1000 * 60)) % 60);
     const s = Math.floor((diff / 1000) % 60);
 
-    // Update HTML
     boxes[0].textContent = d;
     boxes[1].textContent = h;
     boxes[2].textContent = m;
     boxes[3].textContent = s;
   };
 
-  // Initial update
   updateCountdown();
 
-  // Update every second
   const timerInterval = setInterval(updateCountdown, 1000);
 </script>
+
+
 <script>
-  // Toggle dropdown on button tap (mobile)
   document.querySelectorAll('.dropbtn').forEach(button => {
     button.addEventListener('click', e => {
-      e.stopPropagation(); // prevent closing immediately
+      e.stopPropagation(); 
       const content = button.nextElementSibling;
       content.classList.toggle('show');
     });
   });
 
-  // Close dropdown when clicking outside
   window.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-content').forEach(menu => {
       menu.classList.remove('show');
@@ -180,12 +170,10 @@
   const mobileNav = document.getElementById('mobile-nav');
   const closeBtn = document.getElementById('mobile-close');
 
-  // open mobile overlay
   hamburger.addEventListener('click', () => {
     mobileNav.classList.add('active');
   });
 
-  // close overlay
   closeBtn.addEventListener('click', () => {
     mobileNav.classList.remove('active');
   });
