@@ -397,17 +397,24 @@ section h2 {
 }
 
 .info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  display: flex;
+  justify-content: center;      /* center horizontally */
+  align-items: flex-end;        /* align to bottom if taller */
+  gap: 30px;                    /* spacing between cards */
+  flex-wrap: wrap;              /* wrap on smaller screens */
+  margin-bottom: 40px;          /* space above footer */
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px;
+  flex: 1 1 200px;              /* flexible width, min 200px */
+  max-width: 250px;             /* prevent too wide */
+  background: rgba(0,0,0,0.85);
+  border: 2px solid #ff3c00;
+  border-radius: 12px;
   padding: 25px;
   text-align: center;
+  color: #fff;
+  font-size: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
