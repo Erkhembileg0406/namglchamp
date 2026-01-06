@@ -149,6 +149,57 @@
 
 
 <script>
+  // Toggle dropdown on button tap (mobile)
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // prevent closing immediately
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  // open mobile overlay
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  // close overlay
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+<script>
   document.querySelectorAll('.dropbtn').forEach(button => {
     button.addEventListener('click', e => {
       e.stopPropagation(); 
@@ -194,8 +245,6 @@
     });
   });
 </script>
-
-
 
 
 
