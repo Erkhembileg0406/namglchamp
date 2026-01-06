@@ -21,17 +21,9 @@
   <div class="header-inner">
     <div class="logo glow">NAMGLCHAMP</div>
 
-    <!-- Hamburger for mobile -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav id="mobile-nav">
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
       <a href="index.html">Нүүр</a>
-      
-      <a href="streamer.html">Тэмцээнийг үзэх</a> 
       <div class="dropdown">
         <button class="dropbtn">Season</button>
         <div class="dropdown-content">
@@ -39,11 +31,35 @@
           <a href="season2.html">Season 2</a>
         </div>
       </div>
+      <a href="streamer.html">Тэмцээнийг үзэх</a> 
       <a href="register.html">Бүртгэл</a>
       <a href="bracket.html">Bracket</a>
     </nav>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
+
+  <!-- Mobile Full-Screen Menu -->
+  <nav id="mobile-nav">
+    <a href="index.html">Нүүр</a>
+    <div class="dropdown">
+      <button class="dropbtn">Season</button>
+      <div class="dropdown-content">
+        <a href="season1.html">Season 1</a>
+        <a href="season2.html">Season 2</a>
+      </div>
+    </div>
+    <a href="streamer.html">Тэмцээнийг үзэх</a> 
+    <a href="register.html">Бүртгэл</a>
+    <a href="bracket.html">Bracket</a>
+  </nav>
 </header>
+
 
 
 
@@ -157,20 +173,22 @@
 
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
 
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-  });
+// Toggle overlay
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
 
-  // Optional: close menu when clicking a link
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('active');
-    });
+// Close overlay if a link is clicked
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
   });
+});
 </script>
+
 
 
 </body>

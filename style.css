@@ -28,6 +28,12 @@ header {
   align-items: center;
   flex-wrap: wrap;
 }
+
+
+
+
+
+
 nav a {
   color: #fff;
   padding: 8px 12px;
@@ -93,47 +99,63 @@ nav a {
 }
 
 /* MOBILE NAV OVERLAY */
+/* MOBILE NAV OVERLAY */
 #mobile-nav {
-  display: flex;
-  gap: 10px;
+  display: none; /* hidden by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: fixed;
+  inset: 0;
+  background: url("images/hero-bg.png") center center / cover no-repeat;
+  z-index: 9999;
 }
 
-@media (max-width: 768px) {
-  nav {
-    display: none; /* hide original nav */
-  }
+#mobile-nav a, #mobile-nav .dropbtn {
+  font-size: 1.5rem;
+  color: #fff;
+  border: 2px solid #ff3c00;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  transition: 0.3s;
+}
 
+#mobile-nav a:hover, #mobile-nav .dropbtn:hover {
+  background: #ff3c00;
+  color: #000;
+}
+
+/* Dropdown inside overlay */
+#mobile-nav .dropdown-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  min-width: 180px;
+}
+
+/* Show overlay when active */
+#mobile-nav.active {
+  display: flex;
+}
+
+/* Hamburger display for mobile */
+@media (max-width: 768px){
+  nav.desktop-nav {
+    display: none; /* hide desktop nav */
+  }
   .hamburger {
     display: flex;
-  }
-
-  /* Full-screen overlay when active */
-  #mobile-nav.active {
-    position: fixed;
-    inset: 0;
-    background: url("images/hero-bg.png") center center / cover no-repeat;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    z-index: 9999;
-    display: flex;
+    gap: 5px;
+    cursor: pointer;
   }
+}
 
-  #mobile-nav a, .dropbtn {
-    font-size: 1.5rem;
-    color: #fff;
-    border: 2px solid #ff3c00;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: rgba(0,0,0,0.7);
-    transition: 0.3s;
-  }
-
-  #mobile-nav a:hover, .dropbtn:hover {
-    background: #ff3c00;
-    color: #000;
-  }
 
   /* Dropdown inside overlay */
   .dropdown-content {
@@ -144,7 +166,7 @@ nav a {
     border-radius: 6px;
     min-width: 180px;
   }
-}
+
 
 
 /* Dropdown container */
