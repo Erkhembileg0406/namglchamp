@@ -83,17 +83,6 @@ body::after {
   z-index: 2;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #ff3c00;
-  text-shadow:
-    0 0 5px #ff3c00,
-    0 0 10px #ff4500,
-    0 0 15px #ffbd00;
-}
 
 .hero p {
   font-size: 1.5rem;
@@ -111,13 +100,7 @@ section {
   padding: 0 20px;
 }
 
-/* Add subtle glow / fire accent to all headings */
-h2, h3 {
-  color: #ff3c00;
-  text-shadow:
-    0 0 6px #ff3c00,
-    0 0 12px #ffbd00;
-}
+
 
 
 /* ================= HEADER ================= */
@@ -247,23 +230,23 @@ nav.desktop-nav .dropbtn {
 }
 
 /* ================= MOBILE OVERLAY NAV ================= */
+/* ================= MOBILE NAV ================= */
 #mobile-nav {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   inset: 0;
-  background: url("images/hero-bg.png") center center / cover no-repeat;
+  background: rgba(0,0,0,0.95); /* semi-transparent black overlay */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  z-index: 9999;
+  z-index: 2000; /* higher than header */
 }
 
 #mobile-nav.active {
   display: flex;
 }
-
 /* Close X button */
 #mobile-close {
   position: absolute;
