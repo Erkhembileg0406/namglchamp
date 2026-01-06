@@ -22,11 +22,27 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
 
-  /* Optional subtle Dota flames/particles effect */
   position: relative;
+  
+  padding-top: 80px; 
+
+}
+body {
+  padding-top: 80px; 
 }
 
-/* Optional: pseudo element for extra fade/glow effect */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; 
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px; 
+  }
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -106,8 +122,14 @@ h2, h3 {
 
 /* ================= HEADER ================= */
 header {
-  background: rgba(0,0,0,0.85);
+  position: fixed; /* make it stick */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  background: rgba(0,0,0,0.85); /* keep the semi-transparent look */
   border-bottom: 1px solid rgba(255,60,0,0.4);
+  backdrop-filter: blur(5px); /* optional, nice effect */
 }
 
 .header-inner {
