@@ -123,7 +123,15 @@
 .flip-card.flip .flip-card-inner {
   transform: rotateY(180deg);
 }
+/* Flip on hover (desktop) */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
 
+/* Flip on tap (mobile) */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
 /* Front & Back */
 .flip-card-front,
 .flip-card-back {
