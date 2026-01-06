@@ -97,14 +97,16 @@
     grid-template-columns: 1fr;
   }
 }
-
-
-/* Flip Card */
+@media (max-width: 480px) {
+  .flip-card-inner {
+    aspect-ratio: auto;       /* remove fixed square */
+    height: 320px;            /* increase height to be more visible */
+  }
+}
 .flip-card-inner {
   position: relative;
   width: 100%;
-  /* use auto height based on content */
-  aspect-ratio: 1 / 1;    /* square card */
+  aspect-ratio: 1 / 1;   /* square on desktop */
   transform-style: preserve-3d;
   transition: transform 0.8s;
 }
