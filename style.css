@@ -22,7 +22,6 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
 
-  /* Optional subtle Dota flames/particles effect */
   position: relative;
   
   padding-top: 80px; 
@@ -32,19 +31,17 @@ body {
   padding-top: 80px; 
 }
 
-/* Adjust padding for mobile if header is shorter */
 @media (max-width: 768px) {
   body {
-    padding-top: 70px; /* adjust if mobile header is smaller */
+    padding-top: 70px; 
   }
 }
 
 @media (max-width: 480px) {
   body {
-    padding-top: 60px; /* adjust for very small screens */
+    padding-top: 60px; 
   }
 }
-/* Optional: pseudo element for extra fade/glow effect */
 body::after {
   content: "";
   position: fixed;
@@ -65,11 +62,6 @@ body::after {
   align-items: center;
   text-align: center;
   z-index: 1;
-  color: #ff3c00;
-  text-shadow: 
-    0 0 10px #ff3c00aa,
-    0 0 20px #ff3c00aa,
-    0 0 30px #ffbd00aa;
 }
 
 .hero::before {
@@ -90,11 +82,6 @@ body::after {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #ff3c00;
-  text-shadow:
-    0 0 5px #ff3c00,
-    0 0 10px #ff4500,
-    0 0 15px #ffbd00;
 }
 
 .hero p {
@@ -250,18 +237,20 @@ nav.desktop-nav .dropbtn {
 
 /* ================= MOBILE OVERLAY NAV ================= */
 #mobile-nav {
-  display: none; /* hidden by default */
-  position: fixed;
-  inset: 0;
+  display: none;
+  position: fixed;       /* make it cover the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* full width */
+  height: 100vh;         /* full height */
   background: url("images/hero-bg.png") center center / cover no-repeat;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  z-index: 9999;
+  z-index: 2000;         /* above everything else */
 }
-
 #mobile-nav.active {
   display: flex;
 }
