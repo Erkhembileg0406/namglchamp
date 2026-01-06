@@ -230,23 +230,23 @@ nav.desktop-nav .dropbtn {
 }
 
 /* ================= MOBILE OVERLAY NAV ================= */
-/* ================= MOBILE NAV ================= */
 #mobile-nav {
-  display: none;
+  display: none; /* hidden by default */
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.95); /* semi-transparent black overlay */
+  background: url("images/hero-bg.png") center center / cover no-repeat;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  z-index: 2000; /* higher than header */
+  z-index: 9999;
 }
 
 #mobile-nav.active {
   display: flex;
 }
+
 /* Close X button */
 #mobile-close {
   position: absolute;
