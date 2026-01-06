@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAMGLCHAMP – Dota 2 Тэмцээн</title>
+  <title>NAMGLCHAMP – Dota 2 Тэмцээн-S1</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -309,13 +309,140 @@
   </div>
 </section>
 
+<style>
+  /* ================= MVP SECTION ================= */
+.mvp-section {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.mvp-title {
+  font-size: 2.2rem;
+  color: #ff3c00;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(255,60,0,0.6);
+}
+
+.mvp-card {
+  background: rgba(0,0,0,0.75);
+  border: 2px solid rgba(255,60,0,0.5);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 40px rgba(255,60,0,0.35);
+}
+
+.mvp-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff3c00;
+  box-shadow: 0 0 30px rgba(255,60,0,0.8);
+  animation: mvpGlow 2.5s infinite alternate;
+}
+
+@keyframes mvpGlow {
+  from {
+    box-shadow: 0 0 20px rgba(255,60,0,0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255,60,0,0.9);
+  }
+}
+
+.mvp-name {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.mvp-meta {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.mvp-stats {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,60,0,0.6);
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 90px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.stat span {
+  display: block;
+  font-size: 1.4rem;
+  color: #ff3c00;
+  margin-top: 6px;
+}
+
+.mvp-quote {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .mvp-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mvp-title {
+    font-size: 1.7rem;
+  }
+
+  .mvp-name {
+    font-size: 1.4rem;
+  }
+
+  .stat {
+    min-width: 80px;
+    padding: 12px;
+  }
+}
+
+</style>
+<section class="mvp-section">
+  <h2 class="mvp-title">🏆 Season 1 MVP</h2>
+
+  <div class="mvp-card">
+    <img src="images/mvp-avatar-s1.jpg" alt="Season 1 MVP" class="mvp-avatar">
+
+    <h3 class="mvp-name">Falcon</h3>
+    <p class="mvp-meta">Carry • Team: WCYD!</p>
+
+    <div class="mvp-stats">
+      <div class="stat">KDA<br><span>8.5</span></div>
+      <div class="stat">GPM<br><span>720</span></div>
+      <div class="stat">Win Rate<br><span>84.6%</span></div>
+    </div>
+
+    <p class="mvp-quote">“Forgot Xakyy and Won”</p>
+  </div>
+</section>
 
 
 
-
-
-<!-- INFO -->
 <section>
+  <style>
+    
+  </style>
   <h2>Товч мэдээлэл</h2>
   <div class="info-grid">
     <div class="card">🎮 <strong>Тоглоом:</strong><br>Dota 2</div>
