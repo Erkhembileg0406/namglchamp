@@ -153,6 +153,25 @@
   height: 2px;
   background: #ff3c00;
 }
+.bracket-scroll {
+  overflow-x: auto;       /* allows horizontal scroll */
+  padding-bottom: 20px;   /* space for scrollbar */
+}
+
+.bracket-grid {
+  display: flex;
+  gap: 80px;
+  justify-content: flex-start;  /* keep left alignment on mobile */
+  min-width: max-content;       /* prevents flex from shrinking */
+  padding: 20px;
+}
+
+.bracket-column {
+  min-width: 220px;       /* keep columns readable */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
 /* ===== MATCH BOX ===== */
 .match {
@@ -198,18 +217,19 @@
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .bracket-grid {
-    justify-content: flex-start;
+    gap: 40px;            
   }
 
   .bracket-column {
-    min-width: 200px;
+    min-width: 180px;     
   }
 
   .team img {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 }
+
 
 </style>
 
