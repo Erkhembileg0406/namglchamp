@@ -237,33 +237,34 @@ nav.desktop-nav .dropbtn {
 
 /* ================= MOBILE OVERLAY NAV ================= */
 #mobile-nav {
-  display: none;
-  position: fixed;       
+  display: none;             /* hidden by default */
+  position: fixed;           /* overlay the whole viewport */
   top: 0;
   left: 0;
-  width: 100vw;          
-  height: 100vh;         
+  width: 100vw;              /* full width */
+  height: 100vh;             /* full height */
   background: url("images/hero-bg.png") center center / cover no-repeat;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  z-index: 2000;         
+  z-index: 9999;
 }
+
 #mobile-nav.active {
   display: flex;
 }
 
-/* Close X button */
+/* Close button */
 #mobile-close {
   position: absolute;
   top: 30px;
-  right: 30px; /* I prefer right side for mobile close */
+  right: 30px;
   font-size: 3rem;
   color: #ff3c00;
   cursor: pointer;
-  z-index: 2100; /* above mobile nav items */
+  z-index: 10000;
 }
 
 #mobile-close:hover {
