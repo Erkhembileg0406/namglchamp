@@ -102,6 +102,22 @@
     placeholder.replaceWith(iframe);
   });
 </script>
+<script>
+  // Toggle dropdown on button tap (mobile)
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // prevent closing immediately
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
 
+  // Close dropdown when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
 </body>
 </html>
