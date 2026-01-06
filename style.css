@@ -238,18 +238,18 @@ nav.desktop-nav .dropbtn {
 /* ================= MOBILE OVERLAY NAV ================= */
 #mobile-nav {
   display: none;
-  position: fixed;       /* make it cover the viewport */
+  position: fixed;       
   top: 0;
   left: 0;
-  width: 100vw;          /* full width */
-  height: 100vh;         /* full height */
+  width: 100vw;          
+  height: 100vh;         
   background: url("images/hero-bg.png") center center / cover no-repeat;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  z-index: 2000;         /* above everything else */
+  z-index: 2000;         
 }
 #mobile-nav.active {
   display: flex;
@@ -259,13 +259,11 @@ nav.desktop-nav .dropbtn {
 #mobile-close {
   position: absolute;
   top: 30px;
-  left: 30px;
+  right: 30px; /* I prefer right side for mobile close */
   font-size: 3rem;
   color: #ff3c00;
   cursor: pointer;
-  z-index: 10000;
-  font-weight: bold;
-  transition: 0.3s;
+  z-index: 2100; /* above mobile nav items */
 }
 
 #mobile-close:hover {
