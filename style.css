@@ -56,14 +56,17 @@ body::after {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 80vh; /* shrink hero on mobile */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 1;
+  
 }
 
+@media(max-width:480px){
+  .hero { height: 50vh; } /* even smaller on phones */
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -237,12 +240,12 @@ nav.desktop-nav .dropbtn {
 
 /* ================= MOBILE OVERLAY NAV ================= */
 #mobile-nav {
-  display: none;             /* hidden by default */
-  position: fixed;           /* overlay the whole viewport */
+  display: none;             
+  position: fixed;          
   top: 0;
   left: 0;
-  width: 100vw;              /* full width */
-  height: 100vh;             /* full height */
+  width: 100vw;              
+  height: 100vh;             
   background: url("images/blood-pg.webp") center center / cover no-repeat;
   flex-direction: column;
   justify-content: center;
