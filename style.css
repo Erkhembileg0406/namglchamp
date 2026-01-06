@@ -135,80 +135,107 @@ nav a {
 
 
 /* MOBILE OVERLAY MENU ITEMS */
-#mobile-nav a,
-#mobile-nav .dropbtn {
-  width: 250px;                /* same width */
-  text-align: center;          /* center text */
-  padding: 14px 0;             /* consistent height */
-  border-radius: 8px;
-  font-size: 1.3rem;
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  border: 2px solid #ff3c00;
-  box-sizing: border-box;      /* ensures text fits */
+/* ------------------ Hamburger ------------------ */
+.hamburger {
+  display: none; /* show only on mobile */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
   display: block;
-  white-space: nowrap;          /* prevent wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis;      /* truncate if needed */
+  width: 25px;
+  height: 3px;
+  background: #ff3c00;
+  border-radius: 2px;
+}
+
+/* ------------------ Mobile Overlay ------------------ */
+#mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: url("images/hero-bg.png") center center / cover no-repeat;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  padding: 40px 20px;
+}
+
+#mobile-nav.active {
+  display: flex;
+}
+
+/* Close X button */
+#mobile-close {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 3rem;
+  color: #ff3c00;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-/* Hover effect */
-#mobile-nav a:hover,
-#mobile-nav .dropbtn:hover {
-  background: #ff3c00;
-  color: #000;
+#mobile-close:hover {
+  color: #fff;
 }
 
-
-
-
-
-
-
-#mobile-nav a, #mobile-nav .dropbtn {
+/* Mobile links */
+#mobile-nav a,
+#mobile-nav .dropbtn {
   font-size: 1.5rem;
   color: #fff;
   border: 2px solid #ff3c00;
   padding: 12px 20px;
   border-radius: 8px;
   background: rgba(0,0,0,0.7);
+  width: 100%;
   text-align: center;
   transition: 0.3s;
 }
 
-#mobile-nav a:hover, #mobile-nav .dropbtn:hover {
+#mobile-nav a:hover,
+#mobile-nav .dropbtn:hover {
   background: #ff3c00;
   color: #000;
 }
 
-/* Dropdown inside overlay */
+/* Mobile dropdown content inside overlay */
 #mobile-nav .dropdown-content {
   position: relative;
-  top: 0;
-  left: 0;
+  display: none;
+  flex-direction: column;
   background: rgba(0,0,0,0.7);
   border-radius: 6px;
-  min-width: 180px;
+  margin-top: 5px;
 }
 
-/* Show overlay when active */
-#mobile-nav.active {
+#mobile-nav .dropdown-content a {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+}
+
+/* Show dropdown on tap */
+#mobile-nav .dropdown-content.show {
   display: flex;
 }
 
-/* Hamburger display for mobile */
-@media (max-width: 768px){
-  nav.desktop-nav {
-    display: none; /* hide desktop nav */
+/* ------------------ Responsive ------------------ */
+@media(max-width:768px) {
+  .desktop-nav {
+    display: none;
   }
+
   .hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
   }
 }
+
 
 
   /* Dropdown inside overlay */
