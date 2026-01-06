@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAMGLCHAMP – Dota 2 Тэмцээн</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Connect to external style.css -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo glow">NAMGLCHAMP</div>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="index.html">Нүүр</a>
+      <a href="streamer.html">Тэмцээнийг үзэх</a> 
+
+      <div class="dropdown">
+        <button class="dropbtn">Season</button>
+        <div class="dropdown-content">
+          <a href="season1.html">Season 1</a>
+          <a href="season2.html">Season 2</a>
+        </div>
+      </div>
+      
+      <a href="register.html">Бүртгэл</a>
+      <a href="bracket.html">Bracket</a>
+    </nav>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Menu -->
+  <nav id="mobile-nav">
+    <div id="mobile-close">&times;</div>
+    <a href="index.html">Нүүр</a>
+    <a href="streamer.html">Тэмцээнийг үзэх</a> 
+    <div class="dropdown">
+      <button class="dropbtn">Season</button>
+      <div class="dropdown-content">
+        <a href="season1.html">Season 1</a>
+        <a href="season2.html">Season 2</a>
+      </div>
+    </div>
+    <a href="register.html">Бүртгэл</a>
+    <a href="bracket.html">Bracket</a>
+  </nav>
+</header>
+
+
+
+
+<!-- HERO -->
+<section class="hero">
+<section id="bracket">
+  <h2>Тэмцээний Bracket</h2>
+  <div class="bracket">
+
+    <!-- Upper Bracket -->
+    <div class="bracket-column ub-quarter ub-col">
+      <div class="match">
+        <div class="team"><img src="images/team1.png"><span>Team 1</span></div>
+        <div class="team"><img src="images/team8.png"><span>Team 8</span></div>
+      </div>
+      <div class="match">
+        <div class="team"><img src="images/team4.png"><span>Team 4</span></div>
+        <div class="team"><img src="images/team5.png"><span>Team 5</span></div>
+      </div>
+    </div>
+
+    <div class="bracket-column ub-semi ub-col">
+      <div class="match">
+        <div class="team"><span>Winner QF1</span></div>
+        <div class="team"><span>Winner QF2</span></div>
+      </div>
+    </div>
+
+    <div class="bracket-column ub-final ub-col">
+      <div class="match">
+        <div class="team"><span>Winner SF</span></div>
+        <div class="team"><span>—</span></div>
+      </div>
+    </div>
+
+    <!-- Lower Bracket -->
+    <div class="bracket-column lb-round1 lb-col">
+      <div class="match">
+        <div class="team"><span>Loser QF1</span></div>
+        <div class="team"><span>Loser QF2</span></div>
+      </div>
+      <div class="match">
+        <div class="team"><span>Loser QF3</span></div>
+        <div class="team"><span>Loser QF4</span></div>
+      </div>
+    </div>
+
+    <div class="bracket-column lb-semi lb-col">
+      <div class="match">
+        <div class="team"><span>Winner LB R1</span></div>
+        <div class="team"><span>Winner Another</span></div>
+      </div>
+    </div>
+
+    <div class="bracket-column lb-final lb-col">
+      <div class="match">
+        <div class="team"><span>Winner LB Semi</span></div>
+        <div class="team"><span>—</span></div>
+      </div>
+    </div>
+
+    <!-- Grand Final -->
+    <div class="bracket-column grand-final ub-col">
+      <div class="match">
+        <div class="team"><span>UB Champion</span></div>
+        <div class="team"><span>LB Champion</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+
+<!-- INFO -->
+<section>
+  <h2>Товч мэдээлэл</h2>
+  <div class="info-grid">
+    <div class="card">🎮 <strong>Тоглоом:</strong><br>Dota 2</div>
+    <div class="card">🌎 <strong>Бүс:</strong><br>Хойд Америк</div>
+    <div class="card">👥 <strong>Формат:</strong><br>5v5 багийн тоглолт</div>
+    <div class="card">🏆 <strong>Улирал:</strong><br>Season 2</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 NAMGLCHAMP · All rights reserved
+</footer>
+
+<script>
+</script>
+<script>
+  const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
+
+  const countdownEl = document.getElementById("countdown");
+  const boxes = countdownEl.querySelectorAll(".time-box span");
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      countdownEl.innerHTML = '<h2>Тоглолт эхлэх цаг боллоо!</h2>';
+      clearInterval(timerInterval);
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    boxes[0].textContent = d;
+    boxes[1].textContent = h;
+    boxes[2].textContent = m;
+    boxes[3].textContent = s;
+  };
+
+  updateCountdown();
+
+  const timerInterval = setInterval(updateCountdown, 1000);
+</script>
+
+
+<script>
+  // Toggle dropdown on button tap (mobile)
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // prevent closing immediately
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  // open mobile overlay
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  // close overlay
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); 
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+<style>
+    #bracket {
+  text-align: center;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  margin: 60px auto;
+  max-width: 1400px;
+  overflow-x: auto;
+}
+
+#bracket h2 {
+  color: #ff3c00;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Main bracket container */
+.bracket {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Column */
+.bracket-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ub-col, .lb-col {
+  min-width: 180px;
+}
+
+/* Match box */
+.match {
+  background: rgba(0,0,0,0.65);
+  border: 2px solid #ff3c00;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.team img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border: 1px solid #ff3c00;
+  border-radius: 4px;
+}
+
+/* Highlight potential winners */
+.ub-final .team:first-child,
+.grand-final .team:first-child {
+  background: #ff3c00;
+  color: #000;
+}
+
+/* Optional connecting lines effect */
+.bracket-column:not(:last-child) .match {
+  position: relative;
+}
+
+.bracket-column:not(:last-child) .match::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: #ff3c00;
+}
+
+</style>
+
+</body>
+</html>
