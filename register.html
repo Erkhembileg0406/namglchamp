@@ -57,54 +57,139 @@
   </nav>
 </header>
 
-
-<!-- HERO STREAM -->
+<!-- HERO SECTION (optional, can have banner or background) -->
+<!-- HERO SECTION WITH REGISTRATION FORM INSIDE -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Үзэгчидтэй шууд дамжуулалт</h1>
-    <p>Хойд Америкийн Монгол Dota 2 тэмцээнээ <strong>Streamers</strong> -ын тусламжтайгаар шууд үзээрэй!</p>
-<section class="streamer-info">
-  <div class="streamer-container">
-    <img src="images/cadis-profile.jpg" alt="Cadis" class="streamer-avatar">
-    <div class="streamer-text">
-      <h2>Caster: Cadis</h2>
-      
-    </div>
+    <h1>Бүртгэл</h1>
+    <p>Баг бүртгүүлэхийн тулд доорх маягтыг бөглөнө үү.</p>
+
+    <!-- Registration Form -->
+    <section id="registration">
+      <h2>Бүртгэлийн маягт</h2>
+      <p>Бүртгэлийн төлбөр: $300</p>
+
+      <form id="team-registration" action="https://formspree.io/f/mnjnkrnd" method="POST">
+        <!-- Team Info -->
+        <div class="form-group">
+          <label for="team_name">Багийн нэр</label>
+          <input type="text" id="team_name" name="team_name" placeholder="Таны багийн нэр" required>
+        </div>
+
+        <div class="form-group">
+          <label for="captain_name">Каптаны нэр</label>
+          <input type="text" id="captain_name" name="captain_name" placeholder="Каптаны нэр" required>
+        </div>
+
+        <!-- Players -->
+        <div class="form-group">
+          <label>Тоглогчид</label>
+          <input type="text" name="player1" placeholder="Тоглогч 1" required>
+          <input type="text" name="player2" placeholder="Тоглогч 2" required>
+          <input type="text" name="player3" placeholder="Тоглогч 3" required>
+          <input type="text" name="player4" placeholder="Тоглогч 4" required>
+          <input type="text" name="player5" placeholder="Тоглогч 5" required>
+        </div>
+
+        <button type="submit">Бүртгүүлэх</button>
+      </form>
+    </section>
   </div>
 </section>
 
-    <!-- LAZY-LOAD STREAM -->
-    <div class="stream-container">
-  <div id="stream-placeholder" class="stream-placeholder">
-    <div id="stream-placeholder" class="stream-placeholder">
-  <img src="images/cadis-bg.JPG" alt="Click to Watch Live">
-  <div class="play-button">&#9658;</div>
-</div>
 
-    <div class="play-button">&#9658;</div>
-  </div>
-</div>
 
-  </div>
-</section>
+<!-- ================= REGISTRATION FORM STYLES ================= -->
+<style>
+ #registration {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    border: 2px solid #ff3c00;
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+}
+
+
+  #registration h2 {
+    color: #ff3c00;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  #registration p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  #team-registration {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    text-align: left;
+    color: #ff3c00;
+  }
+
+  .form-group input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #ff3c00;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .form-group input::placeholder {
+    color: rgba(255,255,255,0.6);
+  }
+
+  button[type="submit"] {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    background: #ff3c00;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    background: #e03e00;
+  }
+
+  /* Mobile Responsive */
+  @media(max-width:768px){
+    #registration {
+      margin: 40px 20px;
+    }
+
+    .form-group input {
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      font-size: 1rem;
+    }
+  }
+</style>
 
 <footer>
   © 2026 NAMGLCHAMP · All rights reserved
 </footer>
 
-<script>
-  const placeholder = document.getElementById('stream-placeholder');
-  placeholder.addEventListener('click', () => {
-    const iframe = document.createElement('iframe');
-    iframe.src = "https://www.youtube.com/embed/live_stream?channel=UCAbCdEfGhIjKlMnOpQrStUv";
-    iframe.width = "100%";
-    iframe.height = "500";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    iframe.frameBorder = "0";
-    placeholder.replaceWith(iframe);
-  });
-</script>
 <script>
   // Toggle dropdown on button tap (mobile)
   document.querySelectorAll('.dropbtn').forEach(button => {

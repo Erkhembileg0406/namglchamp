@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAMGLCHAMP – Dota 2 Тэмцээн-S1</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Connect to external style.css -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo glow">NAMGLCHAMP</div>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="index.html">Нүүр</a>
+      <a href="streamer.html">Тэмцээнийг үзэх</a> 
+
+      <div class="dropdown">
+        <button class="dropbtn">Season</button>
+        <div class="dropdown-content">
+          <a href="season1.html">Season 1</a>
+          <a href="season2.html">Season 2</a>
+        </div>
+      </div>
+      
+      <a href="register.html">Бүртгэл</a>
+      <a href="bracket.html">Bracket</a>
+    </nav>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Menu -->
+  <nav id="mobile-nav">
+    <div id="mobile-close">&times;</div>
+    <a href="index.html">Нүүр</a>
+    <a href="streamer.html">Тэмцээнийг үзэх</a> 
+    <div class="dropdown">
+      <button class="dropbtn">Season</button>
+      <div class="dropdown-content">
+        <a href="season1.html">Season 1</a>
+        <a href="season2.html">Season 2</a>
+      </div>
+    </div>
+    <a href="register.html">Бүртгэл</a>
+    <a href="bracket.html">Bracket</a>
+  </nav>
+</header>
+
+<style>
+  /* ================= SEASON TEAMS ================= */
+.season-teams {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.season-teams h1 {
+  color: #ff3c00;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  gap: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .flip-card-inner {
+    aspect-ratio: auto;       /* remove fixed square */
+    height: 320px;            /* increase height to be more visible */
+  }
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* square on desktop */
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+/* Desktop hover */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Mobile click */
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+/* Flip on hover (desktop) */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Flip on tap (mobile) */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid rgba(255,60,0,0.6);
+  background: #111;
+  box-shadow: 0 0 20px rgba(255,60,0,0.4);
+}
+
+/* Front */
+.flip-card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Back */
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card-back h3 {
+  color: #f16e46;
+  margin-bottom: 15px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flip-card-back li {
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+</style>
+
+<section class="season-teams">
+  <h1>Season 1 – Teams</h1>
+
+  <div class="team-grid">
+
+    <!-- TEAM CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team1.png" alt="Team 1">
+        </div>
+        <div class="flip-card-back">
+          <h3>KINGDOM of FAR FAR AWAY </h3>
+          <ul>
+            <li>Xakyy</li>
+            <li>Gray</li>
+            <li>Trying to live another day</li>
+            <li>The Kid</li>
+            <li>Kimchi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPY THIS CARD 5 MORE TIMES -->
+    <!-- TEAM CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team2.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>WHAT CAN YOU DO?</h3>
+          <ul>
+            <li>Bingu</li>
+            <li>Falcon</li>
+            <li>Xeta</li>
+            <li>Ant Slayer</li>
+            <li>Wemby</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TEAM CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team3.jpg" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>ANDY'S CLEANING CREW</h3>
+          <ul>
+            <li>Xebec</li>
+            <li>Quikaa</li>
+            <li>Berluga</li>
+            <li>Reno</li>
+            <li>today is my birthday</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- TEAM CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team4.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>THE FAMILY</h3>
+          <ul>
+            <li>Odko</li>
+            <li>Blake</li>
+            <li>Arashi</li>
+            <li>Tr1um</li>
+            <li>Pokemon</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <!-- TEAM CARD 5 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team5.jpg" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Z-PRIDE</h3>
+          <ul>
+            <li>Wind</li>
+            <li>U</li>
+            <li>Snow</li>
+            <li>BadGuy</li>
+            <li>WTF</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- TEAM CARD 6 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/team6.png" alt="Team 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>THE-MEDELLIN</h3>
+          <ul>
+            <li>Skywalker</li>
+            <li>Obi</li>
+            <li>Mnsilent</li>
+            <li>Burning</li>
+            <li>111</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<style>
+  /* ================= MVP SECTION ================= */
+.mvp-section {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.mvp-title {
+  font-size: 2.2rem;
+  color: #ff3c00;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(255,60,0,0.6);
+}
+
+.mvp-card {
+  background: rgba(0,0,0,0.75);
+  border: 2px solid rgba(255,60,0,0.5);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 40px rgba(255,60,0,0.35);
+}
+
+.mvp-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff3c00;
+  box-shadow: 0 0 30px rgba(255,60,0,0.8);
+  animation: mvpGlow 2.5s infinite alternate;
+}
+
+@keyframes mvpGlow {
+  from {
+    box-shadow: 0 0 20px rgba(255,60,0,0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255,60,0,0.9);
+  }
+}
+
+.mvp-name {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.mvp-meta {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.mvp-stats {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,60,0,0.6);
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 90px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.stat span {
+  display: block;
+  font-size: 1.4rem;
+  color: #ff3c00;
+  margin-top: 6px;
+}
+
+.mvp-quote {
+  margin-top: 30px;
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .mvp-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mvp-title {
+    font-size: 1.7rem;
+  }
+
+  .mvp-name {
+    font-size: 1.4rem;
+  }
+
+  .stat {
+    min-width: 80px;
+    padding: 12px;
+  }
+}
+.winner-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.winner-section h2 {
+  color: #f3754f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.winner-card {
+  display: inline-block;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid rgba(255,60,0,0.5);
+  box-shadow: 0 0 40px rgba(255,60,0,0.35);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  border-radius: 20px;
+  padding: 40px 30px;
+}
+ 
+.winner-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.winner-card h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.winner-card p {
+  color: #eaeaea;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+</style>
+
+<section class="winner-section">
+  <h2>🥇Season 1 Winner</h2>
+  <div class="winner-card">
+    <img src="images/team2.png" alt="Team 2">
+    <h3>Team: WCYD!</h3>
+    <p>"Финалд <strong style='color: #ff0000;'>Far Far Away</strong> багтай тоглож, стратеги болон гүйцэтгэлээрээ тоглолтыг бүрэн хяналтандаа авсан"</p>
+
+  </div>
+</section>
+
+
+<section class="mvp-section">
+  <h2 class="mvp-title">🏆 Season 1 MVP</h2>
+
+  <div class="mvp-card">
+    <img src="images/mvp-avatar-s1.jpg" alt="Season 1 MVP" class="mvp-avatar">
+
+    <h3 class="mvp-name">Falcon</h3>
+    <p class="mvp-meta">Carry • Team: WCYD!</p>
+
+    <div class="mvp-stats">
+      <div class="stat">KDA<br><span>8.5</span></div>
+      <div class="stat">GPM<br><span>720</span></div>
+      <div class="stat">Win Rate<br><span>84.6%</span></div>
+    </div>
+
+    <p class="mvp-quote">“Forgot Xakyy and Won”</p>
+  </div>
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  © 2026 NAMGLCHAMP · All rights reserved
+</footer>
+
+</script>
+
+
+
+<script>
+  // Toggle dropdown on button tap (mobile)
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // prevent closing immediately
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  // open mobile overlay
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  // close overlay
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); 
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

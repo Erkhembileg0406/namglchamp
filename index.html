@@ -38,16 +38,15 @@
       <a href="register.html">Бүртгэл</a>
       <a href="bracket.html">Bracket</a>
     </nav>
-
-    <!-- Hamburger for Mobile -->
-    <div class="hamburger" id="hamburger">
+ <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
-
+</header>
   <!-- Mobile Full-Screen Menu -->
+   
   <nav id="mobile-nav">
     <div id="mobile-close">&times;</div>
     <a href="index.html">Нүүр</a>
@@ -62,10 +61,9 @@
     <a href="register.html">Бүртгэл</a>
     <a href="bracket.html">Bracket</a>
   </nav>
-</header>
 
 
-
+<main class="page-content">
 
 <!-- HERO -->
 <section class="hero">
@@ -97,7 +95,7 @@
     </div>
   </div>
 </section>
-
+</main>
 <!-- INFO -->
 <section>
   <h2>Товч мэдээлэл</h2>
@@ -114,14 +112,7 @@
   © 2026 NAMGLCHAMP · All rights reserved
 </footer>
 
-<!-- Countdown Script (date will be set later) -->
 <script>
-  // TODO: Set tournament start date here later
-  // const targetDate = new Date("2026-03-07T10:00:00").getTime();
-  // Countdown is intentionally inactive until date is set
-</script>
-<script>
-  // Set target date in Chicago time (CST / UTC-6)
   const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
 
   const countdownEl = document.getElementById("countdown");
@@ -132,31 +123,28 @@
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      // Time reached — replace countdown with Mongolian text
       countdownEl.innerHTML = '<h2>Тоглолт эхлэх цаг боллоо!</h2>';
       clearInterval(timerInterval);
       return;
     }
 
-    // Calculate days, hours, minutes, seconds
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const m = Math.floor((diff / (1000 * 60)) % 60);
     const s = Math.floor((diff / 1000) % 60);
 
-    // Update HTML
     boxes[0].textContent = d;
     boxes[1].textContent = h;
     boxes[2].textContent = m;
     boxes[3].textContent = s;
   };
 
-  // Initial update
   updateCountdown();
 
-  // Update every second
   const timerInterval = setInterval(updateCountdown, 1000);
 </script>
+
+
 <script>
   // Toggle dropdown on button tap (mobile)
   document.querySelectorAll('.dropbtn').forEach(button => {
@@ -177,32 +165,45 @@
 
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  const closeBtn = document.getElementById('mobile-close');
+  const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+const closeBtn = document.getElementById('mobile-close');
 
-  // open mobile overlay
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.add('active');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  mobileNav.classList.remove('active');
+});
+
+// dropdown toggle
+document.querySelectorAll('#mobile-nav .dropbtn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const content = btn.nextElementSibling;
+    content.classList.toggle('show');
   });
+});
 
-  // close overlay
-  closeBtn.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
-  });
+// close dropdowns if click outside
+window.addEventListener('click', () => {
+  document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => menu.classList.remove('show'));
+});
 
-  // dropdown inside mobile overlay
-  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+</script>
+
+<script>
+  document.querySelectorAll('.dropbtn').forEach(button => {
     button.addEventListener('click', e => {
-      e.stopPropagation();
+      e.stopPropagation(); 
       const content = button.nextElementSibling;
       content.classList.toggle('show');
     });
   });
 
-  // close dropdowns when clicking outside
   window.addEventListener('click', () => {
-    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
       menu.classList.remove('show');
     });
   });

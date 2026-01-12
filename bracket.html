@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAMGLCHAMP – Dota 2 Тэмцээн</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Connect to external style.css -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo glow">NAMGLCHAMP</div>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="index.html">Нүүр</a>
+      <a href="streamer.html">Тэмцээнийг үзэх</a> 
+
+      <div class="dropdown">
+        <button class="dropbtn">Season</button>
+        <div class="dropdown-content">
+          <a href="season1.html">Season 1</a>
+          <a href="season2.html">Season 2</a>
+        </div>
+      </div>
+      
+      <a href="register.html">Бүртгэл</a>
+      <a href="bracket.html">Bracket</a>
+    </nav>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Menu -->
+  <nav id="mobile-nav">
+    <div id="mobile-close">&times;</div>
+    <a href="index.html">Нүүр</a>
+    <a href="streamer.html">Тэмцээнийг үзэх</a> 
+    <div class="dropdown">
+      <button class="dropbtn">Season</button>
+      <div class="dropdown-content">
+        <a href="season1.html">Season 1</a>
+        <a href="season2.html">Season 2</a>
+      </div>
+    </div>
+    <a href="register.html">Бүртгэл</a>
+    <a href="bracket.html">Bracket</a>
+  </nav>
+</header>
+
+<style>
+/* ================= BRACKET SECTION ================= */
+
+#bracket {
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#bracket h2 {
+  color: #ff3c00;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  text-shadow: 0 0 12px rgba(255,60,0,0.6);
+}
+
+/* ===== GRID LAYOUT ===== */
+.bracket-grid {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 40px;
+}
+
+/* ===== COLUMNS ===== */
+.bracket-column {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.bracket-column h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  /* Gradient text */
+  background: linear-gradient(45deg, #ff3c00, #ffbd00, #ff3c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Glow effect */
+  text-shadow:
+    0 0 6px rgba(255,60,0,0.8),
+    0 0 12px rgba(255,189,0,0.7),
+    0 0 20px rgba(255,60,0,0.6);
+
+  /* Optional: metallic / rough look */
+  letter-spacing: 2px;
+}
+
+/* ===== MATCH PAIR (2 matches feeding 1) ===== */
+.match-pair {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* vertical connector between two matches */
+.match-pair::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 2px;
+  height: calc(100% - 40px);
+  background: #ff3c00;
+  transform: translateY(-50%);
+}
+
+/* horizontal connector to next column */
+.match-pair::before {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: #ff3c00;
+}
+.bracket-scroll {
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.bracket-grid {
+  display: flex;
+  gap: 60px;
+  min-width: max-content;
+}
+
+.bracket-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 180px;
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,60,0,0.6);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.team img {
+  width: 24px;
+  height: 24px;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .bracket-grid {
+    gap: 30px;
+  }
+
+  .bracket-column {
+    min-width: 160px;
+  }
+
+  .team img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+</style>
+
+
+<!-- HERO -->
+
+
+<main class="page-content">
+<!-- BRACKET -->
+<section id="bracket">
+  <h2>Тэмцээний Bracket</h2>
+  <div class="bracket-scroll">
+    <div class="bracket-grid">
+
+      <!-- ROUND 1 -->
+      <div class="bracket-column round1">
+        <h3>Round 1</h3>
+        <div class="match">
+          <div class="team"><img src="images/tba.jpg">Team 1</div>
+          <div class="team"><img src="images/tba.jpg">Team 2</div>
+        </div>
+        <div class="match">
+          <div class="team"><img src="images/tba.jpg">Team 3</div>
+          <div class="team"><img src="images/tba.jpg">Team 4</div>
+        </div>
+      </div>
+
+      <!-- SEMI FINALS -->
+      <div class="bracket-column semis">
+        <h3>Semi Finals</h3>
+        <div class="match">
+          <div class="team"><img src="images/tba.jpg">Team 1</div>
+          <div class="team"><img src="images/tba.jpg">Team 4</div>
+        </div>
+      </div>
+
+      <!-- FINALS -->
+      <div class="bracket-column finals">
+        <h3>Final</h3>
+        <div class="match">
+          <div class="team"><img src="images/tba.jpg">Team 1</div>
+          <div class="team"><img src="images/tba.jpg">Team 8</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+
+
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  // open mobile overlay
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  // close overlay
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); 
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  window.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('mobile-close');
+
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+
+  // dropdown inside mobile overlay
+  document.querySelectorAll('#mobile-nav .dropbtn').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation();
+      const content = button.nextElementSibling;
+      content.classList.toggle('show');
+    });
+  });
+
+  // close dropdowns when clicking outside
+  window.addEventListener('click', () => {
+    document.querySelectorAll('#mobile-nav .dropdown-content').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  });
+</script>
+</main>
+<footer>
+  © 2026 NAMGLCHAMP · All rights reserved
+</footer>
+</body>
+
+</html>
