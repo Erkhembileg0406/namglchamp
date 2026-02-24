@@ -113,7 +113,7 @@
 </footer>
 
 <script>
-  const targetDate = new Date("2026-03-28T11:00:00-06:00").getTime();
+  const targetDate = new Date("April 4, 2026 00:00:00").getTime();
 
   const countdownEl = document.getElementById("countdown");
   const boxes = countdownEl.querySelectorAll(".time-box span");
@@ -129,14 +129,14 @@
     }
 
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
+const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const m = Math.floor((diff / (1000 * 60)) % 60);
+const s = Math.floor((diff / 1000) % 60);
 
-    boxes[0].textContent = d;
-    boxes[1].textContent = h;
-    boxes[2].textContent = m;
-    boxes[3].textContent = s;
+boxes[0].textContent = d;
+boxes[1].textContent = h;
+boxes[2].textContent = m;
+boxes[3].textContent = s;
   };
 
   updateCountdown();
