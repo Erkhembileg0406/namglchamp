@@ -66,153 +66,170 @@
 <style>
 /* ================= BRACKET SECTION ================= */
 
+/* ================= BRACKET SECTION ================= */
+
 #bracket {
-  max-width: 1400px;
-  margin: 80px auto;
+  max-width: 1700px;
+  margin: 120px auto;
   padding: 0 20px;
   text-align: center;
 }
 
 #bracket h2 {
-  color: #ff3c00;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  text-shadow: 0 0 12px rgba(255,60,0,0.6);
+  font-size: 2.6rem;
+  margin-bottom: 70px;
+  background: linear-gradient(90deg, #ff3c00, #ffbd00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255,60,0,0.7);
 }
 
-/* ===== GRID LAYOUT ===== */
+/* Scroll wrapper */
+.bracket-scroll {
+  overflow-x: auto;
+  padding-bottom: 50px;
+}
+
+/* Grid Layout */
 .bracket-grid {
   display: flex;
-  gap: 80px;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-x: auto;
-  padding-bottom: 40px;
+  gap: 120px;
+  min-width: max-content;
+  align-items: center;
 }
 
-/* ===== COLUMNS ===== */
+/* Column */
 .bracket-column {
-  min-width: 220px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 90px;
+  min-width: 260px;
   position: relative;
 }
 
 .bracket-column h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 900;
+  font-size: 1.3rem;
   text-transform: uppercase;
+  color: #ff3c00;
   letter-spacing: 2px;
-  margin-bottom: 20px;
-  text-align: center;
-
-  /* Gradient text */
-  background: linear-gradient(45deg, #ff3c00, #ffbd00, #ff3c00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Glow effect */
-  text-shadow:
-    0 0 6px rgba(255,60,0,0.8),
-    0 0 12px rgba(255,189,0,0.7),
-    0 0 20px rgba(255,60,0,0.6);
-
-  /* Optional: metallic / rough look */
-  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 
-/* ===== MATCH PAIR (2 matches feeding 1) ===== */
-.match-pair {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* vertical connector between two matches */
-.match-pair::after {
-  content: "";
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  width: 2px;
-  height: calc(100% - 40px);
-  background: #ff3c00;
-  transform: translateY(-50%);
-}
-
-/* horizontal connector to next column */
-.match-pair::before {
-  content: "";
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  width: 40px;
-  height: 2px;
-  background: #ff3c00;
-}
-.bracket-scroll {
-  overflow-x: auto;
-  padding: 20px 0;
-}
-
-.bracket-grid {
-  display: flex;
-  gap: 60px;
-  min-width: max-content;
-}
-
-.bracket-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 180px;
-}
-
+/* MATCH CARD */
 .match {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background: rgba(0,0,0,0.8);
-  border: 1px solid rgba(255,60,0,0.6);
-  border-radius: 12px;
-  padding: 10px;
+  background: linear-gradient(145deg, #111, #1c1c1c);
+  border: 1px solid rgba(255,60,0,0.4);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow:
+    0 0 15px rgba(255,60,0,0.2),
+    inset 0 0 12px rgba(255,60,0,0.1);
+  transition: 0.3s ease;
 }
 
+.match:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 40px rgba(255,60,0,0.5),
+    inset 0 0 20px rgba(255,60,0,0.3);
+}
+
+/* Team row */
 .team {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  padding: 6px 10px;
-  background: rgba(0,0,0,0.85);
+  padding: 10px 12px;
   border-radius: 8px;
+  margin-bottom: 6px;
+  background: rgba(0,0,0,0.65);
+  font-size: 0.9rem;
   color: #fff;
 }
 
-.team img {
-  width: 24px;
-  height: 24px;
+.team:last-child {
+  margin-bottom: 0;
 }
 
-/* MOBILE ADJUSTMENTS */
+.team span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team img {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+}
+
+/* Score */
+.score {
+  font-weight: bold;
+  color: #ffbd00;
+}
+
+/* Winner Highlight */
+.team.winner {
+  background: rgba(255,60,0,0.15);
+  border: 1px solid rgba(255,60,0,0.6);
+  box-shadow: 0 0 15px rgba(255,60,0,0.4);
+}
+
+/* FINAL ROUND BIGGER */
+.finals .match {
+  transform: scale(1.2);
+  border: 2px solid #ff3c00;
+  box-shadow:
+    0 0 60px rgba(255,60,0,0.7),
+    inset 0 0 25px rgba(255,60,0,0.4);
+}
+
+/* ================= MOBILE FRIENDLY ================= */
+
 @media (max-width: 768px) {
+
+  #bracket h2 {
+    font-size: 1.8rem;
+  }
+
   .bracket-grid {
-    gap: 30px;
+    gap: 70px;
   }
 
   .bracket-column {
-    min-width: 160px;
+    min-width: 220px;
+    gap: 60px;
+  }
+
+  .finals .match {
+    transform: scale(1.05);
+  }
+
+  .team {
+    font-size: 0.8rem;
   }
 
   .team img {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 }
 
+@media (max-width: 480px) {
 
+  .bracket-grid {
+    gap: 50px;
+  }
+
+  .bracket-column {
+    min-width: 200px;
+  }
+
+  .match {
+    padding: 10px;
+  }
+}
 </style>
 
 
